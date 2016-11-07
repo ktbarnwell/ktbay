@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/kt/ktbay/ktbay_project/ktbay_project/xml_parse/todo_app.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ktbay_project.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
