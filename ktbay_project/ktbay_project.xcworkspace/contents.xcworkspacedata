@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kt/ktbay/ktbay_project/ktbay_project/xml_parse/todo_app.xcodeproj">
+      location = "group:simple_ebay/simple_ebay.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ktbay_project.xcodeproj">

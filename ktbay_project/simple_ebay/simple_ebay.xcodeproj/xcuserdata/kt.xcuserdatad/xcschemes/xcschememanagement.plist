@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>xml_parse.xcscheme</key>
+		<key>simple_ebay.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6820027B1DC983F1006AD0B5</key>
+		<key>68114D381DD29F67008D5F9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,5 +7,9 @@ target 'ktbay_project' do
 
   # Pods for ktbay_project
   pod 'SwiftyJSON',' ~> 2.3.0'
-  pod 'Alamofire','~> 3.0.0'  
+  pod 'Alamofire','~> 3.0.0'
+
+  # Pods for simple_ebay
+  pod 'SwiftyJSON',' ~> 2.3.0'
+  pod 'Alamofire', '~> 3.0.0'  
 end

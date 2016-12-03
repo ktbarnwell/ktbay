@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6820027B1DC983F1006AD0B5"
-               BuildableName = "todo_app.app"
-               BlueprintName = "todo_app"
-               ReferencedContainer = "container:todo_app.xcodeproj">
+               BlueprintIdentifier = "68114D381DD29F67008D5F9D"
+               BuildableName = "simple_ebay.app"
+               BlueprintName = "simple_ebay"
+               ReferencedContainer = "container:simple_ebay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6820027B1DC983F1006AD0B5"
-            BuildableName = "todo_app.app"
-            BlueprintName = "todo_app"
-            ReferencedContainer = "container:todo_app.xcodeproj">
+            BlueprintIdentifier = "68114D381DD29F67008D5F9D"
+            BuildableName = "simple_ebay.app"
+            BlueprintName = "simple_ebay"
+            ReferencedContainer = "container:simple_ebay.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6820027B1DC983F1006AD0B5"
-            BuildableName = "todo_app.app"
-            BlueprintName = "todo_app"
-            ReferencedContainer = "container:todo_app.xcodeproj">
+            BlueprintIdentifier = "68114D381DD29F67008D5F9D"
+            BuildableName = "simple_ebay.app"
+            BlueprintName = "simple_ebay"
+            ReferencedContainer = "container:simple_ebay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6820027B1DC983F1006AD0B5"
-            BuildableName = "todo_app.app"
-            BlueprintName = "todo_app"
-            ReferencedContainer = "container:todo_app.xcodeproj">
+            BlueprintIdentifier = "68114D381DD29F67008D5F9D"
+            BuildableName = "simple_ebay.app"
+            BlueprintName = "simple_ebay"
+            ReferencedContainer = "container:simple_ebay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
