@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		68114D2F1DCF1170008D5F9D /* EbayImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D2E1DCF1170008D5F9D /* EbayImage.swift */; };
 		682002921DCE7F48006AD0B5 /* EbayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682002911DCE7F48006AD0B5 /* EbayItem.swift */; };
-		682002941DCEA0FB006AD0B5 /* ItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682002931DCEA0FB006AD0B5 /* ItemWrapper.swift */; };
 		68CF1CA81DC97D8300DD540E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CF1CA71DC97D8300DD540E /* AppDelegate.swift */; };
 		68CF1CAA1DC97D8300DD540E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CF1CA91DC97D8300DD540E /* ViewController.swift */; };
 		68CF1CAD1DC97D8300DD540E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68CF1CAB1DC97D8300DD540E /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 		387ACC35A8FE2D6CE5046241 /* Pods_ktbay_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ktbay_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68114D2E1DCF1170008D5F9D /* EbayImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbayImage.swift; sourceTree = "<group>"; };
 		682002911DCE7F48006AD0B5 /* EbayItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbayItem.swift; sourceTree = "<group>"; };
-		682002931DCEA0FB006AD0B5 /* ItemWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemWrapper.swift; sourceTree = "<group>"; };
 		68CF1CA41DC97D8300DD540E /* ktbay_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ktbay_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CF1CA71DC97D8300DD540E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68CF1CA91DC97D8300DD540E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				68CF1CA91DC97D8300DD540E /* ViewController.swift */,
 				682002911DCE7F48006AD0B5 /* EbayItem.swift */,
 				68114D2E1DCF1170008D5F9D /* EbayImage.swift */,
-				682002931DCEA0FB006AD0B5 /* ItemWrapper.swift */,
 				68CF1CAB1DC97D8300DD540E /* Main.storyboard */,
 				68CF1CAE1DC97D8300DD540E /* Assets.xcassets */,
 				68CF1CB01DC97D8300DD540E /* LaunchScreen.storyboard */,
@@ -220,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				682002941DCEA0FB006AD0B5 /* ItemWrapper.swift in Sources */,
 				68CF1CAA1DC97D8300DD540E /* ViewController.swift in Sources */,
 				68CF1CA81DC97D8300DD540E /* AppDelegate.swift in Sources */,
 				68114D2F1DCF1170008D5F9D /* EbayImage.swift in Sources */,

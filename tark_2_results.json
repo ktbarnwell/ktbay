@@ -5,7 +5,7 @@
 		"entriesPerPage": "100",
 		"pageNumber": "1",
 		"totalEntries": "2"
-	},
+		},
 	"ack": "Success",
 	"timestamp": "2016-11-06T00:35:07.091Z",
 	"searchResult": {
@@ -116,3 +116,59 @@
 	},
 	"version": "1.13.0"
 }
+
+
+searchResult: is a dict containing 2 keys: "item", and "_count"
+["searchResult"]["item"] is a list
+["searchResult"]["item"][0] is a dict 
+["searchResult"]["item"][0]["itemId"] is the value of the itemId of the first thing 
+{
+	"itemSearchURL": "http://www.ebay.com/sch/i.html?_nkw=tark+paris+pants+capri+2&_ddo=1&_ipg=100&_pgn=1",
+	"searchResult" : 
+	{
+		"item" : [ 
+			{"itemId_1":"1"},
+			{"itemId_2":"2"}
+		],
+
+		"_count":"2"
+	},
+	"version""1.13.0"
+
+
+}
+
+
+ok wow! specieswrapper is taking the first level of the API. so previous/next are built into the star wars API
+in SWAPI:
+
+layer 1 = 
+"count"
+"next"
+"previous"
+"results"
+
+additionally, in "API" mode, it shows that results is a LIST (array for us) of StarWarsSpecies (JSONS).
+ 
+in eBay, these are
+layer 1:
+"itemSearchURL": "http://www.ebay.com/sch/i.html?_nkw=tark+paris+pants+capri+2&_ddo=1&_ipg=100&_pgn=1",
+"paginationOutput": {
+	"totalPages": "1",
+	"entriesPerPage": "100",
+	"pageNumber": "1",
+	"totalEntries": "2"
+	},
+"ack": "Success",
+"timestamp": "2016-11-06T00:35:07.091Z",
+"searchResult": { }
+"version"
+
+layer 2:
+"item"
+"_count":"2"
+
+
+
+
+self.title isn't JSON{'searchResult':{id}}

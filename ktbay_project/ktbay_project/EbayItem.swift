@@ -93,19 +93,23 @@ request URL: http://www.ebay.com/sch/i.html?_nkw=tark+shimmer&_ddo=1&_ipg=100&_p
 // ["searchResult"]["item"][0]["itemId"] is the value of the itemId of the first thing
 
 
-enum ItemFields: String {
-    case ItemId = "itemId"
-    case Title = "title"
-    case GalleryURL = "galleryURL"
-    case Location = "location"
-    case ViewItemURL = "viewItemURL"
-    // enum more fields later when we understand better
-}
+//enum ItemFields: String {
+//    case ItemId = "itemId"
+//    case Title = "title"
+//    case GalleryURL = "galleryURL"
+//    case Location = "location"
+//    case ViewItemURL = "viewItemURL"
+//    // enum more fields later when we understand better
+//}
 
 class ItemWrapper {
-    var item: Array<EbayItem>?
     var itemSearchURL: String?
+    //var searchResult: [String]?
+    var items: [EbayItem]?
     var count: Int?
+    // var next:
+    // wait on this because it's a nested json -- var paginationOutput: Int?
+    
     // var next: String? -- we can figure out later
     // var previous: String? -- we can figure out later
     
@@ -114,6 +118,7 @@ class ItemWrapper {
 // species 'id' comes from the last digit of the "url" at the bottom;
 // remember that http://www.ebay.com/itm/[itemId] takes you to link
 class EbayItem {
+    var idNumber: Int?
     var itemId: Int?
     var title: String?
     var galleryURL: String?
@@ -121,69 +126,32 @@ class EbayItem {
     var viewItemURL: String?
     
     required init(json: JSON, id: Int?) {
-        self.itemId = id
-        self.title = json[ItemFields.Title.rawValue].stringValue
-        self.galleryURL = json[ItemFields.GalleryURL.rawValue].stringValue
-        self.location = json[ItemFields.Location.rawValue].stringValue
-        // wait on this one - self.viewItemURL = json[SpeciesFields.ViewItemURL.rawValue].stringValue
+        print(json)
+        // I know this is bad and definitely needs a loop - but I don't know ios well enough to write it rn so just wanna get it working!
+        self.idNumber = id
+        self.itemId = json["itemId"][0].intValue
+        self.title = json["title"][0].stringValue
+        self.galleryURL = json["galleryURL"][0].stringValue
+        self.location = json["location"][0].stringValue
+        self.viewItemURL = json["viewItemURL"].stringValue
         
         ///
     }
     
     class func endpointForItem() -> String {
-        return "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&&SERVICE-NAME=FindingService&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD"
+        return "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-NAME=FindingService&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=tark%20pants%20shimmer"
     }
     
-    /*private class func getItemAtPath(path: String, completionHandler: (ItemWrapper?, NSError?) -> Void) {
-        let securePath = path.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: .AnchoredSearch)
-        Alamofire.request(.GET, securePath)
-         .responseItemArray { response in
-                if let error = response.result.error
-                {
-                    completionHandler(nil, error)
-                    return
-                }
-                completionHandler(response.result.value, nil)
-        }
-    }*/
-    
-    /*private class func getItemAtPath(path: String, completionHandler: (ItemWrapper?, NSError?) -> Void) {
-        
-        let securePath = path.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: .AnchoredSearch)
-        let params = ["keywords":"tark paris pants capri"]
-            Alamofire.request(.GET, securePath, parameters: params)
-                .responseData { response in
-                    debugPrint(response)
-                
-                    switch response.result {
-                    case .Success(let JSON):
-                        print(JSON)
-                    case .Failure(let error):
-                        print(error)
-                }
-        }
-
-    }*/
     
     private class func getItemAtPath(path: String, completionHandler: (ItemWrapper?, NSError?) -> Void) {
     
-    let securePath = path.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: .AnchoredSearch)
-        let params = ["keywords":"tark paris pants capri"]
-        Alamofire.request(.GET, securePath, parameters: params)
-            .responseData { response in
-                //debugPrint(response)
-    
-                switch response.result {
-                case .Success(let JSON):
-                    
-                   // let json = SwiftyJSON.JSON(value)
-                    //var allItems:Array = Array<EbayItem>()
-                    print(JSON)
-                    //let items = json["item"]
-                    //print(items)
-                case .Failure(let error):
-                    print(error)
-                }
+        let securePath = path.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: .AnchoredSearch)
+        // I think this is from ebay but let's try the other -- let params = ["keywords":"tark paris capri"]
+        //let params = ["searchResult":"item"]
+        Alamofire.request(.GET, securePath)
+            //, parameters: params)
+            .responseItemArray { response in
+                completionHandler(response.result.value, response.result.error)
         }
         
     }
@@ -193,7 +161,16 @@ class EbayItem {
         getItemAtPath(EbayItem.endpointForItem(), completionHandler: completionHandler)
     }
     
+//    class func getMoreItems(wrapper: ItemWrapper?, completionHandler: (ItemWrapper?, NSError?) -> Void) {
+//        guard let nextPath = wrapper?.next else {
+//            completionHandler(nil, nil)
+//            return
+//        }
+//        getItemAtPath(nextPath, completionHandler: completionHandler)
+//    }
 }
+    
+
 
 
 extension Alamofire.Request {
@@ -216,26 +193,31 @@ extension Alamofire.Request {
             case .Success(let value):
                 let json = SwiftyJSON.JSON(value)
                 let wrapper = ItemWrapper()
-                wrapper.itemSearchURL = json["itemSearchURL"].stringValue
+                wrapper.count = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["@count"].intValue
+                //print(wrapper.count)
+                wrapper.itemSearchURL = json["findItemsByKeywordsResponse"][0]["itemSearchURL"].stringValue
+                //if let wrapper.next = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["@count"]
                     /*wrapper.next = json["next"].stringValue
                     wrapper.previous = json["previous"].stringValue
                     wrapper.count = json["count"].intValue*/
-                    
-                    
-                    // I don't think this is right! because searchResult is level one, but item is the next level,
-                    //so each item is actually TWO in.
-                    
-                var allItems:Array = Array<EbayItem>()
-                print(json)
-                let items = json["item"]
-                print(items)
+               
+                var allItems = [EbayItem]()
+                //print(json)
+       
+                let searchResultZero = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
+                let items = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
+                
+                
+                //print("printing itemId")
+                //print(itemId)
                 for jsonEbayItem in items
                 {
-                    print (jsonEbayItem.1)
+                    //print (jsonEbayItem.1)
                     let ebayItems = EbayItem(json: jsonEbayItem.1, id: Int(jsonEbayItem.0))
+                    // how to write wrapper? if id+1 is less than count, wrapper = viewItemURL of next item
                     allItems.append(ebayItems)
                 }
-                wrapper.item = allItems
+                wrapper.items = allItems
                 return .Success(wrapper)
             case .Failure(let error):
                 return .Failure(error)
