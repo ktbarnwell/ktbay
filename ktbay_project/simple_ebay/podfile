@@ -1,7 +1,7 @@
-# Uncomment the next line to define a global platform for your project
+#uncomment the next line to define a global platform for your project
 platform :ios, '8.0'
 
-target 'ktbay_project' do
+target 'simple_ebay' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -11,6 +11,6 @@ target 'ktbay_project' do
 
    # Pods for 'simple_ebay'
   pod 'SwiftyJSON',' ~> 2.3.0'
-  pod 'Alamofire', '~> 3.0.0'  
+  pod 'Alamofire', '~> 3.0.0'
 
 end

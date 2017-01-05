@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BEF0DD5AFF628B5E9501B99 /* Pods_simple_ebay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */; };
 		68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3C1DD29F67008D5F9D /* AppDelegate.swift */; };
 		68114D3F1DD29F67008D5F9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3E1DD29F67008D5F9D /* ViewController.swift */; };
 		68114D421DD29F67008D5F9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68114D401DD29F67008D5F9D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08E0BEC4E65ABD7926978BF6 /* Pods-simple_ebay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple_ebay.release.xcconfig"; path = "Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay.release.xcconfig"; sourceTree = "<group>"; };
 		68114D391DD29F67008D5F9D /* simple_ebay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_ebay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68114D3C1DD29F67008D5F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68114D3E1DD29F67008D5F9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		68114D461DD29F67008D5F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68114D481DD29F67008D5F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682982CA1E1B1AA1008A3C46 /* EbayItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbayItem.swift; sourceTree = "<group>"; };
+		712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_ebay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB90DB82A2B422EF0BBA04F8 /* Pods-simple_ebay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple_ebay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEF0DD5AFF628B5E9501B99 /* Pods_simple_ebay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BD67F180284544E19FEE4C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68114D301DD29F67008D5F9D = {
 			isa = PBXGroup;
 			children = (
 				68114D3B1DD29F67008D5F9D /* simple_ebay */,
 				68114D3A1DD29F67008D5F9D /* Products */,
+				A5A7F36E9CCDC478A4BD2C11 /* Pods */,
+				3BD67F180284544E19FEE4C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = simple_ebay;
 			sourceTree = "<group>";
 		};
+		A5A7F36E9CCDC478A4BD2C11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB90DB82A2B422EF0BBA04F8 /* Pods-simple_ebay.debug.xcconfig */,
+				08E0BEC4E65ABD7926978BF6 /* Pods-simple_ebay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68114D4B1DD29F67008D5F9D /* Build configuration list for PBXNativeTarget "simple_ebay" */;
 			buildPhases = (
+				2D25197D21D94D70BCC80A74 /* [CP] Check Pods Manifest.lock */,
 				68114D351DD29F67008D5F9D /* Sources */,
 				68114D361DD29F67008D5F9D /* Frameworks */,
 				68114D371DD29F67008D5F9D /* Resources */,
+				680ED6691E1DF0150016FCE7 /* ShellScript */,
+				DC3110E6C79B234602155675 /* [CP] Embed Pods Frameworks */,
+				8C4B26820E904893FF306DC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +161,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D25197D21D94D70BCC80A74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		680ED6691E1DF0150016FCE7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		8C4B26820E904893FF306DC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC3110E6C79B234602155675 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		68114D351DD29F67008D5F9D /* Sources */ = {
@@ -250,6 +339,7 @@
 		};
 		68114D4C1DD29F67008D5F9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB90DB82A2B422EF0BBA04F8 /* Pods-simple_ebay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = simple_ebay/Info.plist;
@@ -261,6 +351,7 @@
 		};
 		68114D4D1DD29F67008D5F9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08E0BEC4E65ABD7926978BF6 /* Pods-simple_ebay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = simple_ebay/Info.plist;

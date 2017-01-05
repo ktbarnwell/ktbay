@@ -12,8 +12,8 @@ import Foundation
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cellIdentifier = "Cell"
-    var item:Array<EbayItem>?
-    var isLoadingItem = false
+    var items:Array<EbayItem>?
+    var searchTerm:SearchTerm?
     
     @IBOutlet weak var tableview: UITableView?
     
@@ -21,9 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
-        self.loadFirstItem()
-        
-        
+        self.loadItems()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,11 +29,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func loadFirstItem() {
-        isLoadingItem = true
-        EbayItem.getItem { wrapper, error in
+    func loadItems() {
+        EbayItem.getItems {search, error in
             guard error == nil else {
-                self.isLoadingItem = false
                 let alert = UIAlertController(title: "Error",
                     message: "Could not load first item \(error?.localizedDescription)",
                     preferredStyle: UIAlertControllerStyle.Alert)
@@ -43,56 +39,66 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
-//            self.addItemFromWrapper(wrapper)
-            self.isLoadingItem = false
+            self.getArray(search)
             self.tableview?.reloadData()
         }
     }
-    
-//    func addItemFromWrapper(wrapper: ItemWrapper?)
-//    {
-//        self.itemWrapper = wrapper
-//        if self.item == nil
-//        {
-//            self.item = self.itemWrapper?.item
-//        }
-//        else if self.itemWrapper != nil && self.itemWrapper!.item != nil
-//        {
-//            self.item = self.item! + self.itemWrapper!.item!
-//        }
-//    }
-    
-    
+            
+        
+    func getArray(search: SearchTerm?) {
+        self.searchTerm = search
+        if self.items == nil {
+            self.items = self.searchTerm!.items
+            self.tableview?.reloadData()
+        }
+        else {
+            print("this is fucking hopeless")
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.item == nil {
+//        if self.items == nil {
+//            return 0
+//        }
+//        return self.items!.count
+        guard let items = self.items else {
+            print("still no items")
             return 0
         }
-        return self.item!.count
+        return items.count
+
     }
-    
+//    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        if let numberOfItems = self.item?.count where numberOfItems >= indexPath.row {
-            if let item = self.item?[indexPath.row] {
-                cell.textLabel?.text = item.title
-                cell.detailTextLabel?.text = item.galleryURL
+        if self.items != nil {
+            let item = self.items![indexPath.row]
+            cell.textLabel?.text = item.title
+            
+//            cell.imageView?.image = nil
+//            if let urlString = item.galleryURL {
+//                if let cellToUpdate = self.tableView?.cellForRow(at: indexPath) {
+//                cellToUpdate.imageView?.image = image // will work fine even if image is nil
+//                        // need to reload the view, which won't happen otherwise
+//                        // since this is in an async call
+//                cellToUpdate.setNeedsLayout()
+//                }
+//            //cell.detailTextLabel?.text = item.galleryURL
+//            }
+//        }
+        
+            
             }
-            
-            /* let rowsToLoadFromBottom = 5;
-            if !self.isLoadingItems && indexPath.row >= (numberOfItems - rowsToLoadFromBottom) {
-            if let totalItemCount = self.itemWrapper?.count where totalItemCount - numberOfItems > 0 {
-            self.loadMoreItems()
-            } */
-            
-        }
         return cell
     }
-    
+
+
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-}
 
+
+}
     
