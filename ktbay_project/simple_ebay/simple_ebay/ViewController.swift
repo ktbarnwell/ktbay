@@ -11,17 +11,26 @@ import Foundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     let cellIdentifier = "Cell"
     var items:Array<EbayItem>?
     var searchTerm:SearchTerm?
+    // rename later
+    var stringPassed = ""
     
+    @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var tableview: UITableView?
+    @IBOutlet weak var headerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+        // rename later
         self.loadItems()
+        headerLabel.text = self.stringPassed
+
+        
     }
     
     override func didReceiveMemoryWarning() {
