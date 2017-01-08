@@ -14,6 +14,7 @@
 		68114D441DD29F67008D5F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68114D431DD29F67008D5F9D /* Assets.xcassets */; };
 		68114D471DD29F67008D5F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */; };
 		682982CB1E1B1AA1008A3C46 /* EbayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682982CA1E1B1AA1008A3C46 /* EbayItem.swift */; };
+		683D271F1E1E130900298CA2 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D271E1E1E130900298CA2 /* ImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		68114D461DD29F67008D5F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68114D481DD29F67008D5F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682982CA1E1B1AA1008A3C46 /* EbayItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbayItem.swift; sourceTree = "<group>"; };
+		683D271E1E1E130900298CA2 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_ebay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB90DB82A2B422EF0BBA04F8 /* Pods-simple_ebay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple_ebay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */,
 				68114D481DD29F67008D5F9D /* Info.plist */,
 				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
+				683D271E1E1E130900298CA2 /* ImageController.swift */,
 			);
 			path = simple_ebay;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				68114D3F1DD29F67008D5F9D /* ViewController.swift in Sources */,
 				68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */,
 				682982CB1E1B1AA1008A3C46 /* EbayItem.swift in Sources */,
+				683D271F1E1E130900298CA2 /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

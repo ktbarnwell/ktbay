@@ -25,6 +25,15 @@ class SearchTerm {
     }
 }
 
+//class ImageSearchResult {
+//    let imageURL:String?
+//    var image:UIImage?
+//    
+//    required init(anImageURL: String?) {
+//        imageURL = anImageURL
+//    }
+//}
+
 class EbayItem{
     var idNumber: Int?
     var itemId: Int?
@@ -32,6 +41,7 @@ class EbayItem{
     var galleryURL: String?
     var location: String?
     var viewItemURL: String?
+    var image:UIImage?
     
     required init(json: JSON, id: Int?) {
         //print(json)
@@ -42,6 +52,7 @@ class EbayItem{
         self.galleryURL = json["galleryURL"][0].stringValue
         self.location = json["location"][0].stringValue
         self.viewItemURL = json["viewItemURL"].stringValue
+
     }
     
     
@@ -53,6 +64,21 @@ class EbayItem{
                 completionHandler(response.result.value, response.result.error)
             }
     }
+    
+    class func imageFromURL() -> Void {
+        let imageURL = self.galleryURL
+        Alamofire.request(.GET, imageURL)
+            .response { (request, response, data, error) in
+                guard let imageData = data else {
+                    print("guess we needed imageURLResult")
+                    return
+                }
+                self.image = UIImage(data: imageData)
+        }
+    }
+
+    
+    
     
 }
 

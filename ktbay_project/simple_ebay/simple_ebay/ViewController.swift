@@ -75,21 +75,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if self.items != nil {
             let item = self.items![indexPath.row]
             cell.textLabel?.text = item.title
-            
-//            cell.imageView?.image = nil
-//            if let urlString = item.galleryURL {
-//                if let cellToUpdate = self.tableView?.cellForRow(at: indexPath) {
-//                cellToUpdate.imageView?.image = image // will work fine even if image is nil
-//                        // need to reload the view, which won't happen otherwise
-//                        // since this is in an async call
-//                cellToUpdate.setNeedsLayout()
-//                }
-//            //cell.detailTextLabel?.text = item.galleryURL
-//            }
-//        }
-        
-            
+            var image = UIImageView!()
+            if let url = NSURL(string: item.galleryURL) {
+                if let data = NSData(contentsOfURL: url) {
+                    imageURL.image = UIImage(data: data)
+                }
             }
+        
+            }
+        
         return cell
     }
 
