@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A2067383506A4671ECF7D857A58046DE0F426379",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A2067383506A4671ECF7D857A58046DE0F426379" : 0,
+    "7B9308F96C7BFA2A139622BC12D8241A11114FCD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A6FC6FB-F788-466A-816F-C01B46AA18D7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A2067383506A4671ECF7D857A58046DE0F426379" : "ktbay\/",
+    "7B9308F96C7BFA2A139622BC12D8241A11114FCD" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "simple_ebay",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ktbay_project\/simple_ebay\/simple_ebay.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ktbarnwell\/takehomes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B9308F96C7BFA2A139622BC12D8241A11114FCD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ktbarnwell\/ktbay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A2067383506A4671ECF7D857A58046DE0F426379"
+    }
+  ]
+}
