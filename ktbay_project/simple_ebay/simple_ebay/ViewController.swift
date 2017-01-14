@@ -16,19 +16,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var items:Array<EbayItem>?
     var searchTerm:SearchTerm?
     // rename later
-    var stringPassed = ""
+    var searchString = ""
     
     @IBOutlet weak var labelView: UIView!
-    @IBOutlet weak var tableview: UITableView?
-    @IBOutlet weak var headerLabel: UILabel!
+    // don't forget that we changed UITableView from an optional to an exlamation just now
+    @IBOutlet weak var tableview: UITableView!
+    //@IBOutlet weak var headerLabel: UILabel!
+    
+    init(stringForSearch: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.searchString = stringForSearch
+    }
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+        //self.searchString = stringForSearch
+    }
+    
+    // here we say that in order to instantiate a ViewController, you have to pass a string in the constructor
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+        headerLabel.text = self.searchString
         // rename later
         self.loadItems()
-        headerLabel.text = self.stringPassed
+       
 
         
     }

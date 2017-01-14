@@ -74,13 +74,13 @@
 			isa = PBXGroup;
 			children = (
 				68114D3C1DD29F67008D5F9D /* AppDelegate.swift */,
+				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
 				68114D3E1DD29F67008D5F9D /* ViewController.swift */,
+				0239DC781E1EF11500CA318F /* SearchController.swift */,
 				68114D401DD29F67008D5F9D /* Main.storyboard */,
 				68114D431DD29F67008D5F9D /* Assets.xcassets */,
-				68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */,
 				68114D481DD29F67008D5F9D /* Info.plist */,
-				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
-				0239DC781E1EF11500CA318F /* SearchController.swift */,
+				68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */,
 			);
 			path = simple_ebay;
 			sourceTree = "<group>";
