@@ -21,7 +21,9 @@ class SearchController: UIViewController {
         
         // for now let's just have a dummy string as the label, get it to show, and then we can hook it up later
         
-        let myVC = ViewController(stringForSearch: "Test String")
+        let myVC = ResultsViewController(stringForSearch: "this is my test string")
+        print("printing searchString from SearchController instantiation")
+        print(myVC.searchString!)
         navigationController?.pushViewController(myVC, animated: true)
         
         
@@ -29,6 +31,7 @@ class SearchController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

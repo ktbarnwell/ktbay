@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search Controller-->
@@ -46,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1868" y="546"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ResultsViewController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7VL-IQ-dA8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7VL-IQ-dA8">
                                 <rect key="frame" x="0.0" y="0.0" width="591" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,7 +67,7 @@
                                     <rect key="frame" x="0.0" y="64" width="591" height="66"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-vf-3br">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-vf-3br">
                                             <rect key="frame" x="274" y="23" width="42" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -77,10 +78,9 @@
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="leading" secondItem="sgt-1G-iiI" secondAttribute="leading" constant="8" id="E7b-lQ-KrP"/>
-                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="top" secondItem="sgt-1G-iiI" secondAttribute="top" constant="8" id="NkV-Nh-AFf"/>
-                                        <constraint firstAttribute="trailing" secondItem="3Cy-vf-3br" secondAttribute="trailing" constant="8" id="gSu-su-q8V"/>
-                                        <constraint firstAttribute="bottom" secondItem="3Cy-vf-3br" secondAttribute="bottom" constant="8" id="qqb-fl-yha"/>
+                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="top" secondItem="sgt-1G-iiI" secondAttribute="top" constant="23" id="IVn-d0-V4e"/>
+                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="centerX" secondItem="sgt-1G-iiI" secondAttribute="centerX" id="Su0-4N-QcN"/>
+                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="centerY" secondItem="sgt-1G-iiI" secondAttribute="centerY" id="zG9-bI-taI"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -122,11 +122,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="H1l-UI-sY1"/>
-                            <constraint firstAttribute="trailing" secondItem="7VL-IQ-dA8" secondAttribute="trailing" id="TIG-Cn-jaB"/>
-                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cac-fa-sqv"/>
-                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="em6-EI-iBW"/>
+                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6EH-53-9Ql"/>
+                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MyU-sa-DTg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7VL-IQ-dA8" secondAttribute="trailing" constant="-11" id="klt-iu-ajl"/>
                             <constraint firstAttribute="trailing" secondItem="7VL-IQ-dA8" secondAttribute="trailing" constant="9" id="r0d-GY-e4U"/>
+                            <constraint firstItem="7VL-IQ-dA8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zB7-cp-v8g"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -135,7 +135,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="headerLabel" destination="3Cy-vf-3br" id="QGV-nK-SXy"/>
+                        <outlet property="headerLabel" destination="3Cy-vf-3br" id="Egx-aR-3K2"/>
                         <outlet property="labelView" destination="sgt-1G-iiI" id="2gZ-yS-Ysk"/>
                         <outlet property="tableview" destination="7VL-IQ-dA8" id="S4b-5K-AEt"/>
                     </connections>

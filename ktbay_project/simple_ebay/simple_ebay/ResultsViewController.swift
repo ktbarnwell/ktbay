@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ResultsViewController.swift
 //  simple_ebay
 //
 //  Created by Katie Barnwell on 11/8/16.
@@ -9,39 +9,65 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     let cellIdentifier = "Cell"
     var items:Array<EbayItem>?
     var searchTerm:SearchTerm?
     // rename later
-    var searchString = ""
+    // when we have searchString as set to something here via the code, it DOES show up. ok!
+    //var searchString = "test string"
+    var searchString: String?
     
+       // don't forget that we changed UITableView from an optional to an exlamation just now
+    @IBOutlet weak var tableview: UITableView?
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var labelView: UIView!
-    // don't forget that we changed UITableView from an optional to an exlamation just now
-    @IBOutlet weak var tableview: UITableView!
-    //@IBOutlet weak var headerLabel: UILabel!
+
     
-    init(stringForSearch: String) {
+    // old inits here - do not remove
+    init(stringForSearch: String?) {
+        if let thisString = stringForSearch {
+            self.searchString = thisString
+        }
+        else {
+            print("i hate swift")
+        }
+        //self.searchString = stringForSearch
         super.init(nibName: nil, bundle: nil)
-        self.searchString = stringForSearch
-    }
+        print("we hit stringForSearch init")
+        }
+    
     required init?(coder decoder: NSCoder) {
+        print("we hit coder decoder init")
         super.init(coder: decoder)
         //self.searchString = stringForSearch
     }
-    
-    // here we say that in order to instantiate a ViewController, you have to pass a string in the constructor
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
-        headerLabel.text = self.searchString
+        print("printing self.searchString from viewDidLoad")
+        print(self.searchString)
+        //headerLabel.text = self.searchString
         // rename later
         self.loadItems()
+        dispatch_async(dispatch_get_main_queue()) {
+            // when we set headerLabel.text explicitly to some text, it works!
+            if let myLabel = self.searchString {
+                self.headerLabel.text = myLabel
+                // HOLY FUCK!!!! when we unwrap, 'guess it's still zero' prints but text displayed is "Label"
+            }
+            else {
+                print(self.searchString)
+                //self.headerLabel.text = "default text";
+                print("guess it's still zero")
+            }
+        self.reloadInputViews()
+        }
        
 
         
