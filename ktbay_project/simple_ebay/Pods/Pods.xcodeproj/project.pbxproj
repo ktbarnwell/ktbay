@@ -57,8 +57,8 @@
 		0F8ECF00A31C551E81F4AFAE58AE28DE /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
 		119593604F171C523758B40F13989E56 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		1241D90DB9BE97B82FFB08B1946F6339 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		228E0F0E166A1E539381EFAB03E354B9 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		247992ED8BAE0EA21C5D7EADC58748E6 /* Pods-simple_ebay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-simple_ebay.modulemap"; sourceTree = "<group>"; };
+		228E0F0E166A1E539381EFAB03E354B9 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		247992ED8BAE0EA21C5D7EADC58748E6 /* Pods-simple_ebay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-simple_ebay.modulemap"; sourceTree = "<group>"; };
 		26B92EB57AB62D49F40AAD98AE5B7BC0 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		31225DFA1BEE8243D0A545D351C664A4 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		33E70390B0FF97AE9E4C1834B5A57F68 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		392E165A73DB131921E6A845CE94EC4D /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		48AB7332B62C88E1579623BFA20BF7B0 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		5005C61ED0B8DE99B71D469F0B33C0CF /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		573C8776FA1BEC13401ABAD7AED1C6B1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		573C8776FA1BEC13401ABAD7AED1C6B1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BBFF8F921F0F0084872CF6561D9114 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		5F6028763A0FDEC1A4336E309A8F8E5C /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		64307F8CAA61F9E4AFAEBB14B183158A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		8EEA8AA3C5CCFDDFA31E722F8210645A /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		929F928737A2DD10C19B5272376CF1D4 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		932915D8F908EF8EBF103E939F0087FC /* Pods-simple_ebay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple_ebay.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99DCC27A63156824B4B3D7258B79F3CA /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		9E9542E94AD3A8D70FB9479910429EB0 /* Pods-simple_ebay-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-simple_ebay-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9FCA2890C00BEE64B4DB90115D4790F5 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 		C3369FC712D5B89EDA87E175C417C52B /* Pods-simple_ebay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-simple_ebay-dummy.m"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CD772EFF0627CD6C07C1EF34DB215C73 /* Pods-simple_ebay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple_ebay.release.xcconfig"; sourceTree = "<group>"; };
-		DBD9AFF96447211C236C5738BD1D0BAD /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		E0037E0F53D718598341A92150F7EF7B /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDEF85980934B254D3869F46D40DD98E /* Pods_simple_ebay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_ebay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD9AFF96447211C236C5738BD1D0BAD /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		E0037E0F53D718598341A92150F7EF7B /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDEF85980934B254D3869F46D40DD98E /* Pods_simple_ebay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_simple_ebay.framework; path = "Pods-simple_ebay.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5288353CE8B2CDACE506FFD425B54E1 /* Pods-simple_ebay-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple_ebay-resources.sh"; sourceTree = "<group>"; };
 		F8C47D2F4EB6DC11604BB81CB0F80ED0 /* Pods-simple_ebay-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-simple_ebay-acknowledgements.plist"; sourceTree = "<group>"; };
 		FA6BB6E71A23709D5CD064C65810BD06 /* Pods-simple_ebay-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple_ebay-frameworks.sh"; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 				5F6028763A0FDEC1A4336E309A8F8E5C /* SwiftyJSON.swift */,
 				17A0B96C67F923021CAEDFEB5CD24F1E /* Support Files */,
 			);
+			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -179,6 +180,7 @@
 				99DCC27A63156824B4B3D7258B79F3CA /* Validation.swift */,
 				01E4F5E45883048586DCBD1A9A00E032 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};

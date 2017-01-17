@@ -12,6 +12,7 @@ class MySearchController: UIViewController {
 
     var searchString = "please God"
     
+    @IBOutlet weak var testImageView: UIImageView!
     @IBOutlet weak var searchText: UITextField!
     @IBAction func searchButton(sender: AnyObject) {
         // tamar says: this is bad. what we want is not to use the storyboard, but to instantiate our ViewController with the params that we'll want
@@ -31,8 +32,7 @@ class MySearchController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        testImageView.imageFromUrl("http://thumbs2.ebaystatic.com/m/mBchjbZ1pJOFXLVwKJVWKTw/140.jpg")
         // Do any additional setup after loading the view.
     }
 
@@ -77,6 +77,23 @@ class MySearchController: UIViewController {
         
     }
 }
-    
-   
+
+//extension UIImageView {
+//    public func imageFromUrl(urlString: String) {
+//        if let url = NSURL(string: urlString) {
+//            let request = NSURLRequest(URL: url)
+//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+//                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//                if let imageData = data as NSData? {
+//                    self.image = UIImage(data: imageData)
+//                }
+//            }
+//        }
+//    }
+//}
+
+
+
+
+
 

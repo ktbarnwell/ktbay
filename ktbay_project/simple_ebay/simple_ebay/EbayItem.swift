@@ -32,6 +32,7 @@ class EbayItem{
     var galleryURL: String?
     var location: String?
     var viewItemURL: String?
+    var itemImageView: UIImageView?
     
     required init(json: JSON, id: Int?) {
         //print(json)
@@ -40,8 +41,18 @@ class EbayItem{
         self.itemId = json["itemId"][0].intValue
         self.title = json["title"][0].stringValue
         self.galleryURL = json["galleryURL"][0].stringValue
+        //print(self.galleryURL)
         self.location = json["location"][0].stringValue
         self.viewItemURL = json["viewItemURL"].stringValue
+        // a little more to get the actual image from the galleryURL
+        self.itemImageView = UIImageView()
+        dummyImage(self.galleryURL)
+//        if let thisImageView: UIImageView? = nil {
+//            thisImageView?.imageFromUrl("http://thumbs2.ebaystatic.com/m/mcxudqufgkPZPK5gdUbO7qg/140.jpg")
+//            self.itemImageView = thisImageView
+//            print(self.itemImageView)
+//        }
+        print("got dummy image")
     }
     
     
@@ -55,7 +66,35 @@ class EbayItem{
             }
     }
     
+    func dummyImage(urlString: String!) -> Void {
+        self.itemImageView!.imageFromUrl(urlString)
+    }
+    
+    
+    
+    func requestImage(url: String, success: (UIImage?) -> Void) {
+        requestURL(url, success: { (data) -> Void in
+            if let d = data {
+                success(UIImage(data: d))
+            }
+        })
+    }
+    
+    func requestURL(url: String, success: (NSData?) -> Void, error: ((NSError) -> Void)? = nil) {
+        NSURLConnection.sendAsynchronousRequest(
+            NSURLRequest(URL: NSURL (string: url)!),
+            queue: NSOperationQueue.mainQueue(),
+            completionHandler: { response, data, err in
+                if let e = err {
+                    error?(e)
+                } else {
+                    success(data)
+                }
+        })
+  
+    }
 }
+
 
 extension Alamofire.Request {
         func responseItemArray(completionHandler: Response<SearchTerm, NSError> -> Void) -> Self {
@@ -86,9 +125,9 @@ extension Alamofire.Request {
                     for jsonEbayItem in items
                     {
                         //print (jsonEbayItem.1)
-                        let ebayItems = EbayItem(json: jsonEbayItem.1, id: Int(jsonEbayItem.0))
+                        let ebayItem = EbayItem(json: jsonEbayItem.1, id: Int(jsonEbayItem.0))
                         // how to write wrapper? if id+1 is less than count, wrapper = viewItemURL of next item
-                        allItems.append(ebayItems)
+                        allItems.append(ebayItem)
                     }
                     search.items = allItems
                     print("I think success!")

@@ -8,15 +8,17 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableview: UITableView?
+
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var headLabel: UILabel!
     
-    let cellIdentifier = "Cell"
+    let cellIdentifier = "CustomTableViewCell"
     var items:Array<EbayItem>?
     var searchTerm:SearchTerm?
     // rename later
@@ -25,6 +27,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var searchString:String?
     var labelText:String?
+    var dummyImageView:UIImageView?
+    //var imageDict = [Int:UIImageView]()
+    
     
        // don't forget that we changed UITableView from an optional to an exlamation just now
     
@@ -32,6 +37,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     required init?(coder decoder: NSCoder) {
         print("we hit coder decoder init")
         //self.labelText = ""
+        self.dummyImageView = UIImageView()
         super.init(coder: decoder)
 
     }
@@ -39,8 +45,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getImagesDummy()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+        self.tableView?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
         self.loadItems()
         // loadItems calls ebayItem.getItems
         dispatch_async(dispatch_get_main_queue()) {
@@ -53,6 +60,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
                 print("viewDidLoad didn't work")
             }
         }
+        self.tableView?.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +79,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             self.getArray(search)
-            self.tableview?.reloadData()
+            //self.getImages()
+            //self.unWrapImages()
+            self.tableView?.reloadData()
         }
     }
             
@@ -81,12 +91,39 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         if self.items == nil {
             print("entered getArray loop")
             self.items = self.searchTerm!.items
-            self.tableview?.reloadData()
+            self.tableView?.reloadData()
         }
         else {
             print("this is fucking hopeless")
         }
     }
+    
+    func getImagesDummy() -> Void {
+        self.dummyImageView!.imageFromUrl("http://thumbs2.ebaystatic.com/m/mcxudqufgkPZPK5gdUbO7qg/140.jpg")
+    }
+//    
+//    func getImages() -> Void {
+//        for item in self.items! {
+//            if let thisString = item.galleryURL {
+//                //print(item.itemId)
+//                let myImage: UIImageView! = nil
+//                if let thisImage = myImage {
+//                    thisImage.imageFromUrl(thisString)
+//                    imageDict[item.itemId!] = thisImage
+//        }
+//        
+//    }
+//        }
+//    }
+    
+//    func getImagesTwo() -> Void {
+//        for item in self.items! {
+//            if let thisItem = self.itemImageView {
+//                print(self.itemImage
+//            }
+//            }
+//            
+//        }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        if self.items == nil {
@@ -100,41 +137,46 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         return items.count
 
     }
-//    
+    
+  
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
+        //let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell:CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
+
         if self.items != nil {
             let item = self.items![indexPath.row]
-            cell.textLabel?.text = item.title
-            
-//            cell.imageView?.image = nil
-//            if let urlString = item.galleryURL {
-//                if let cellToUpdate = self.tableView?.cellForRow(at: indexPath) {
-//                cellToUpdate.imageView?.image = image // will work fine even if image is nil
-//                        // need to reload the view, which won't happen otherwise
-//                        // since this is in an async call
-//                cellToUpdate.setNeedsLayout()
-//                }
-//            //cell.detailTextLabel?.text = item.galleryURL
-//            }
-//        }
-        
-            
+            cell.myTitle?.text = item.title
+            cell.myTitle?.adjustsFontSizeToFitWidth = true
+            //print(self.imageDict[item.itemId!])
+            if let thisImageView = item.itemImageView {
+                cell.myImageView?.image = thisImageView.image
+                
+                print("image wasn't null")
             }
+            //cell.myImageView?.image = self.dummyImageView?.image
+        }
+        cell.setNeedsLayout()
         return cell
     }
-    
-    func setLabel(myLabel: String) {
-        self.headLabel?.text = myLabel
-    }
+
 
 
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     
-
 }
-    
+
+extension UIImageView {
+    public func imageFromUrl(urlString: String) {
+            if let url = NSURL(string: urlString) {
+                let request = NSURLRequest(URL: url)
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                    (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                    if let imageData = data as NSData? {
+                        self.image = UIImage(data: imageData)
+                    }
+                }
+            }
+        }
+}
