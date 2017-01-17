@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Search Controller-->
+        <!--My Search Controller-->
         <scene sceneID="dCb-MQ-4o6">
             <objects>
-                <viewController storyboardIdentifier="SearchController" id="v7O-FU-2HN" customClass="SearchController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MySearchController" id="v7O-FU-2HN" customClass="MySearchController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5R4-nu-JHA"/>
                         <viewControllerLayoutGuide type="bottom" id="Hah-Th-mH5"/>
@@ -24,23 +24,22 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="searchButton:" destination="v7O-FU-2HN" eventType="touchUpInside" id="F8K-W5-Bif"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="gkc-iO-r5Z"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="SearchSegue" id="gkc-iO-r5Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eBay search to pass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-yh-eRM">
-                                <rect key="frame" x="175" y="264" width="154" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type Search Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adV-2L-m28">
+                                <rect key="frame" x="204" y="255" width="130" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kmh-0n-RFW"/>
                     <connections>
-                        <outlet property="searchLabel" destination="aOC-yh-eRM" id="g6B-mr-w4h"/>
+                        <outlet property="searchText" destination="adV-2L-m28" id="Rhh-xV-hFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXz-j4-Lnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +49,7 @@
         <!--Results View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ResultsViewController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" id="BYZ-38-t0r" customClass="ResultsViewController" customModule="simple_ebay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -64,13 +63,16 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="sgt-1G-iiI">
-                                    <rect key="frame" x="0.0" y="64" width="591" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="591" height="66"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-vf-3br">
-                                            <rect key="frame" x="274" y="23" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-KS-kJD">
+                                            <rect key="frame" x="274" y="22" width="42" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -78,14 +80,13 @@
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="top" secondItem="sgt-1G-iiI" secondAttribute="top" constant="23" id="IVn-d0-V4e"/>
-                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="centerX" secondItem="sgt-1G-iiI" secondAttribute="centerX" id="Su0-4N-QcN"/>
-                                        <constraint firstItem="3Cy-vf-3br" firstAttribute="centerY" secondItem="sgt-1G-iiI" secondAttribute="centerY" id="zG9-bI-taI"/>
+                                        <constraint firstItem="jTs-KS-kJD" firstAttribute="centerY" secondItem="sgt-1G-iiI" secondAttribute="centerY" id="Eyv-FG-F8z"/>
+                                        <constraint firstItem="jTs-KS-kJD" firstAttribute="centerX" secondItem="sgt-1G-iiI" secondAttribute="centerX" id="cXc-cE-SlN"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="CvE-QM-Ayi" detailTextLabel="xB5-kV-g49" style="IBUITableViewCellStyleValue1" id="mSK-Rk-GG7">
-                                        <rect key="frame" x="0.0" y="158" width="591" height="44"/>
+                                        <rect key="frame" x="0.0" y="94" width="591" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
                                             <rect key="frame" x="0.0" y="0.0" width="591" height="43.5"/>
@@ -135,33 +136,14 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="headerLabel" destination="3Cy-vf-3br" id="Egx-aR-3K2"/>
-                        <outlet property="labelView" destination="sgt-1G-iiI" id="2gZ-yS-Ysk"/>
+                        <outlet property="headLabel" destination="jTs-KS-kJD" id="DIm-Ro-Uh6"/>
+                        <outlet property="labelView" destination="7VL-IQ-dA8" id="qNb-sF-eVS"/>
                         <outlet property="tableview" destination="7VL-IQ-dA8" id="S4b-5K-AEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334" y="423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lcf-CH-TdO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVq-EN-y7c" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8WH-9t-m5l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="v7O-FU-2HN" kind="relationship" relationship="rootViewController" id="pUn-iX-ZKA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tAG-DX-F3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1056" y="546"/>
         </scene>
     </scenes>
 </document>
