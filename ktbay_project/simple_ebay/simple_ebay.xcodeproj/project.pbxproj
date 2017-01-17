@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0239DC791E1EF11500CA318F /* MySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239DC781E1EF11500CA318F /* MySearchController.swift */; };
 		2BEF0DD5AFF628B5E9501B99 /* Pods_simple_ebay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */; };
 		68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3C1DD29F67008D5F9D /* AppDelegate.swift */; };
-		68114D3F1DD29F67008D5F9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3E1DD29F67008D5F9D /* ViewController.swift */; };
+		68114D3F1DD29F67008D5F9D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3E1DD29F67008D5F9D /* ResultsViewController.swift */; };
 		68114D421DD29F67008D5F9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68114D401DD29F67008D5F9D /* Main.storyboard */; };
 		68114D441DD29F67008D5F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68114D431DD29F67008D5F9D /* Assets.xcassets */; };
 		68114D471DD29F67008D5F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */; };
@@ -17,10 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0239DC781E1EF11500CA318F /* MySearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySearchController.swift; sourceTree = "<group>"; };
 		08E0BEC4E65ABD7926978BF6 /* Pods-simple_ebay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple_ebay.release.xcconfig"; path = "Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay.release.xcconfig"; sourceTree = "<group>"; };
 		68114D391DD29F67008D5F9D /* simple_ebay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_ebay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68114D3C1DD29F67008D5F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68114D3E1DD29F67008D5F9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68114D3E1DD29F67008D5F9D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		68114D411DD29F67008D5F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68114D431DD29F67008D5F9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68114D461DD29F67008D5F9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,12 +74,13 @@
 			isa = PBXGroup;
 			children = (
 				68114D3C1DD29F67008D5F9D /* AppDelegate.swift */,
-				68114D3E1DD29F67008D5F9D /* ViewController.swift */,
+				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
+				68114D3E1DD29F67008D5F9D /* ResultsViewController.swift */,
+				0239DC781E1EF11500CA318F /* MySearchController.swift */,
 				68114D401DD29F67008D5F9D /* Main.storyboard */,
 				68114D431DD29F67008D5F9D /* Assets.xcassets */,
-				68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */,
 				68114D481DD29F67008D5F9D /* Info.plist */,
-				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
+				68114D451DD29F67008D5F9D /* LaunchScreen.storyboard */,
 			);
 			path = simple_ebay;
 			sourceTree = "<group>";
@@ -228,9 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68114D3F1DD29F67008D5F9D /* ViewController.swift in Sources */,
+				68114D3F1DD29F67008D5F9D /* ResultsViewController.swift in Sources */,
 				68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */,
 				682982CB1E1B1AA1008A3C46 /* EbayItem.swift in Sources */,
+				0239DC791E1EF11500CA318F /* MySearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

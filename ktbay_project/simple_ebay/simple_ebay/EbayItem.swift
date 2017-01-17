@@ -45,9 +45,10 @@ class EbayItem{
     }
     
     
-    class func getItems(completionHandler: (SearchTerm?, NSError?) -> Void) {
-        let securePath = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-NAME=FindingService&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=print%20pants%20vintage"
-//        let securePath = searchTerm.myString.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: .AnchoredSearch)
+    class func getItems(searchString: String?, completionHandler: (SearchTerm?, NSError?) -> Void) {
+        //let securePath = newSearchString!
+        let securePath = searchString!
+        print(securePath)
         Alamofire.request(.GET, securePath)
             .responseItemArray { response in
                 completionHandler(response.result.value, response.result.error)
@@ -72,12 +73,14 @@ extension Alamofire.Request {
                 let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
                 let result = JSONResponseSerializer.serializeResponse(request, response, responseData, error)
                 
+                // switch statement that checks whether result =
                 switch result {
                 case .Success(let value):
                     let json = SwiftyJSON.JSON(value)
+                    // here is where we initialize SearchTerm
                     let search = SearchTerm()
                     var allItems = [EbayItem]()
-                    let searchResultZero = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
+                    //let searchResultZero = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
                     let items = json["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
                     
                     for jsonEbayItem in items
