@@ -149,7 +149,10 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
 //            else {
 //                print("image didn't work")
 //            }
-            cell.myImageView?.image = self.dummyImageView?.image
+          //  self.dummyImageView?.image
+            ImageLoader.sharedLoader.imageForUrl(item.galleryURL!, completionHandler:{(image: UIImage?, url: String) in
+                    cell.myImageView?.image = image
+            })
             //print(self.imageDict[item.itemId!])
             //cell.myImageView?.image = self.dummyImageView?.image
 //            if let thisImageView = item.itemImageView {
