@@ -32,7 +32,7 @@ class MySearchController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        testImageView.imageFromUrl("http://thumbs2.ebaystatic.com/m/mBchjbZ1pJOFXLVwKJVWKTw/140.jpg")
+        //testImageView.imageForURL("http://thumbs2.ebaystatic.com/m/mBchjbZ1pJOFXLVwKJVWKTw/140.jpg")
         // Do any additional setup after loading the view.
     }
 

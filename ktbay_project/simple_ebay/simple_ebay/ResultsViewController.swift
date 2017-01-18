@@ -45,22 +45,24 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getImagesDummy()
+        //self.getImagesDummy()
+        self.tableView?.rowHeight = 140
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
         self.loadItems()
-        // loadItems calls ebayItem.getItems
+        // getImagesDummy going HERE produces two dummy images in the cells.
+        self.getImagesDummy()
         dispatch_async(dispatch_get_main_queue()) {
             if let myLabel = self.labelText {
                 self.headLabel.text = myLabel
                 self.reloadInputViews()
-                
+                self.tableView?.reloadData()
             }
             else {
                 print("viewDidLoad didn't work")
             }
         }
-        self.tableView?.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,9 +81,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             self.getArray(search)
-            //self.getImages()
             //self.unWrapImages()
             self.tableView?.reloadData()
+          
         }
     }
             
@@ -98,38 +100,31 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    func getImagesDummy() -> Void {
-        self.dummyImageView!.imageFromUrl("http://thumbs2.ebaystatic.com/m/mcxudqufgkPZPK5gdUbO7qg/140.jpg")
+    func getImages() -> Void {
+        if self.items != nil {
+        for item in self.items! {
+            if let urlString = item.galleryURL {
+                ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
+                    item.itemImageView!.image = image
+                })
+            }
+        }
+        }
     }
-//    
-//    func getImages() -> Void {
-//        for item in self.items! {
-//            if let thisString = item.galleryURL {
-//                //print(item.itemId)
-//                let myImage: UIImageView! = nil
-//                if let thisImage = myImage {
-//                    thisImage.imageFromUrl(thisString)
-//                    imageDict[item.itemId!] = thisImage
-//        }
-//        
-//    }
-//        }
-//    }
     
-//    func getImagesTwo() -> Void {
-//        for item in self.items! {
-//            if let thisItem = self.itemImageView {
-//                print(self.itemImage
-//            }
-//            }
-//            
-//        }
+    
+    func getImagesDummy() -> Void {
+        ImageLoader.sharedLoader.imageForUrl("http://thumbs2.ebaystatic.com/m/mcxudqufgkPZPK5gdUbO7qg/140.jpg", completionHandler:{(image: UIImage?, url: String) in
+            self.dummyImageView!.image = image
+        })
+    }
+    
+    
+
+    
+
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if self.items == nil {
-//            return 0
-//        }
-//        return self.items!.count
         guard let items = self.items else {
             print("still no items")
             return 0
@@ -147,15 +142,21 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             let item = self.items![indexPath.row]
             cell.myTitle?.text = item.title
             cell.myTitle?.adjustsFontSizeToFitWidth = true
+//            if let thisItem = item.itemImageView!.image {
+//                cell.myImageView?.image = thisItem
+//                return cell
+//            }
+//            else {
+//                print("image didn't work")
+//            }
+            cell.myImageView?.image = self.dummyImageView?.image
             //print(self.imageDict[item.itemId!])
-            if let thisImageView = item.itemImageView {
-                cell.myImageView?.image = thisImageView.image
-                
-                print("image wasn't null")
-            }
             //cell.myImageView?.image = self.dummyImageView?.image
+//            if let thisImageView = item.itemImageView {
+//                cell.myImageView?.image = thisImageView.image
+//                print("image wasn't null")
+            cell.setNeedsLayout()
         }
-        cell.setNeedsLayout()
         return cell
     }
 
@@ -167,16 +168,63 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
 }
 
-extension UIImageView {
-    public func imageFromUrl(urlString: String) {
-            if let url = NSURL(string: urlString) {
-                let request = NSURLRequest(URL: url)
-                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-                    (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-                    if let imageData = data as NSData? {
-                        self.image = UIImage(data: imageData)
-                    }
-                }
-            }
+
+class ImageLoader {
+    
+    var cache = NSCache()
+    
+    class var sharedLoader : ImageLoader {
+        struct Static {
+            static let instance : ImageLoader = ImageLoader()
         }
+        return Static.instance
+    }
+    
+    func imageForUrl(urlString: String, completionHandler:(image: UIImage?, url: String) -> ()) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {()in
+            let data: NSData? = self.cache.objectForKey(urlString) as? NSData
+            
+            if let goodData = data {
+                let image = UIImage(data: goodData)
+                dispatch_async(dispatch_get_main_queue(), {() in
+                    completionHandler(image: image, url: urlString)
+                })
+                return
+            }
+            
+            let downloadTask: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: urlString)!, completionHandler: {(data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+                if (error != nil) {
+                    completionHandler(image: nil, url: urlString)
+                    return
+                }
+                
+                if data != nil {
+                    let image = UIImage(data: data!)
+                    self.cache.setObject(data!, forKey: urlString)
+                    dispatch_async(dispatch_get_main_queue(), {() in
+                        completionHandler(image: image, url: urlString)
+                    })
+                    return
+                }
+                
+            })
+            downloadTask.resume()
+        })
+        
+    }
 }
+
+//extension UIImageView {
+//    public func imageFromUrl(urlString: String) {
+//            if let url = NSURL(string: urlString) {
+//                let request = NSURLRequest(URL: url)
+//                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+//                    (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//                    if let imageData = data as NSData? {
+//                        self.image = UIImage(data: imageData)
+//                        self.layoutSubviews()
+//                    }
+//                }
+//            }
+//        }
+//}

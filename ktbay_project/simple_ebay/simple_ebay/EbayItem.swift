@@ -46,13 +46,18 @@ class EbayItem{
         self.viewItemURL = json["viewItemURL"].stringValue
         // a little more to get the actual image from the galleryURL
         self.itemImageView = UIImageView()
-        dummyImage(self.galleryURL)
-//        if let thisImageView: UIImageView? = nil {
-//            thisImageView?.imageFromUrl("http://thumbs2.ebaystatic.com/m/mcxudqufgkPZPK5gdUbO7qg/140.jpg")
-//            self.itemImageView = thisImageView
-//            print(self.itemImageView)
+//        getImagesDummy(self.galleryURL!)
+//        print(self.galleryURL!)
+//        if let image = self.itemImageView!.image {
+//            print("Image exists")
 //        }
-        print("got dummy image")
+//        else {
+//            print("there is no image")
+//        }
+        //if let thisImageView: UIImageView? = nil {
+            
+          //  getImagesDummy(item.galleryURL!)        }
+        //print("got dummy image")
     }
     
     
@@ -66,33 +71,17 @@ class EbayItem{
             }
     }
     
-    func dummyImage(urlString: String!) -> Void {
-        self.itemImageView!.imageFromUrl(urlString)
-    }
+//    func dummyImage(urlString: String!) -> Void {
+//        print(urlString)
+//        self.itemImageView!.imageForUrl(urlString)
+//    }
     
-    
-    
-    func requestImage(url: String, success: (UIImage?) -> Void) {
-        requestURL(url, success: { (data) -> Void in
-            if let d = data {
-                success(UIImage(data: d))
-            }
+    func getImagesDummy(urlString: String!) -> Void {
+        ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
+            self.itemImageView!.image = image
         })
     }
-    
-    func requestURL(url: String, success: (NSData?) -> Void, error: ((NSError) -> Void)? = nil) {
-        NSURLConnection.sendAsynchronousRequest(
-            NSURLRequest(URL: NSURL (string: url)!),
-            queue: NSOperationQueue.mainQueue(),
-            completionHandler: { response, data, err in
-                if let e = err {
-                    error?(e)
-                } else {
-                    success(data)
-                }
-        })
-  
-    }
+
 }
 
 
