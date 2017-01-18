@@ -32,6 +32,9 @@ class MySearchController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let image = loadImageFromPath("/Users/katie/repos/ktbay/ktbay_project/simple_ebay/temp_ktbay_logo.png")
+        testImageView.image = image
+        
         //testImageView.imageForURL("http://thumbs2.ebaystatic.com/m/mBchjbZ1pJOFXLVwKJVWKTw/140.jpg")
         // Do any additional setup after loading the view.
     }
@@ -76,6 +79,20 @@ class MySearchController: UIViewController {
         }
         
     }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        
+        let image = UIImage(contentsOfFile: path)
+        
+        if image == nil {
+            
+            print("missing image at: \(path)")
+        }
+        print("Loading image from path: \(path)") // this is just for you to see the path in case you want to go to the directory, using Finder.
+        return image
+        
+    }
+
 }
 
 //extension UIImageView {

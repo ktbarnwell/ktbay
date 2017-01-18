@@ -18,17 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-kD-OcX">
-                                <rect key="frame" x="229" y="293" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="searchButton:" destination="v7O-FU-2HN" eventType="touchUpInside" id="F8K-W5-Bif"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="SearchSegue" id="gkc-iO-r5Z"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tark pants abstract" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adV-2L-m28">
-                                <rect key="frame" x="190" y="255" width="144" height="30"/>
+                                <rect key="frame" x="166" y="255" width="223" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -37,6 +28,15 @@
                                 <rect key="frame" x="149" y="83" width="240" height="128"/>
                                 <animations/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-kD-OcX">
+                                <rect key="frame" x="218" y="298" width="95" height="30"/>
+                                <animations/>
+                                <state key="normal" title="ktbay search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="v7O-FU-2HN" eventType="touchUpInside" id="F8K-W5-Bif"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="SearchSegue" id="gkc-iO-r5Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
