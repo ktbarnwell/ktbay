@@ -270,6 +270,35 @@ def run_motors(opts):
 
     dictstr = "%s" % api.response_dict()
     print("Response dictionary: %s..." % dictstr[:250])
+
+def get_spoken_word(opts):
+    
+    try:
+        api = finding(debug=opts.debug, appid=opts.appid,
+                      config_file=myconfig, warnings=True)
+        api_request = (
+            "http://svcs.ebay.com/services/search/FindingService/v1?" +
+            "OPERATION-NAME=findItemsByCategory&" +
+            "SERVICE-VERSION=1.0.0&" +
+            "SECURITY-APPNAME=YourAppID&" +
+            "RESPONSE-DATA-FORMAT=XML&" +
+            "REST-PAYLOAD&" +
+            "categoryId=307&" +
+            "paginationInput.entriesPerPage=3&" +
+            "paginationInput.pageNumber=11&" +
+            "aspectFilter(0).aspectName=Genre&" +
+            "aspectFilter(0).aspectValueName=Spoken+Word+%26+Interviews&" +
+            "aspectFilter(1).aspectName=Condition&" +
+            "aspectFilter(1).aspectValueName(0)=Brand+New&" +
+            "aspectFilter(1).aspectValueName(1)=Like+New"
+
+        )
+        response = api.execute('findItemsByCategory', api_request)
+        print (response.json())
+
+    except ConnectionError as e:
+        print(e)
+        print(e.response.dict())
     
 if __name__ == "__main__":
     print("Finding samples for SDK version %s" % ebaysdk.get_version())
@@ -278,7 +307,8 @@ if __name__ == "__main__":
     #get_pants_histogram(opts)
     #find_pants(opts)
     #find_tark_pants(opts)
-    find_tark_pants_2(opts)
+    get_spoken_word(opts)
+    #find_tark_pants_2(opts)
     #get_category_info(opts)
     #run2(opts)
     #run_motors(opts)

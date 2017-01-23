@@ -62,7 +62,57 @@ class EbayItem{
     
     
     class func getItems(searchString: String?, completionHandler: (SearchTerm?, NSError?) -> Void) {
-        //let securePath = newSearchString!
+        // generic beginning for findItemsByCategory
+//       let securePath = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD"
+        
+        // getting the aspect histogram KatieBar-ktebay-PRD-f2f8dabd4-01019dd9
+        let aspectHistogramPath = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.12.0&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=2&categoryId=63863&outputSelector=AspectHistogram"
+        
+        ///
+        let pantsPath = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=63863&aspectFilter(0).aspectName=Condition&aspectFilter(0).aspectValueName=Pre-owned&"
+        
+//        let pantsPath = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&outputSelector=AspectHistogram&itemFilter(0).name=ConditionId&itemFilter(0).value=3000&categoryId=63863"
+        
+//        https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&outputSelector=AspectHistogram&itemFilter(0).name=ConditionId&itemFilter(0).value=3000&itemFilter(1).value=Waist&itemFilter(1).value=26&categoryId=63863
+
+        
+//        aspectFilter(0).aspectName=Genre&
+//        aspectFilter(0).aspectName=Condition&
+//        aspectFilter(0).aspectValueName=3000&
+//        aspectFilter(0).aspectValueName=Spoken+Word+%26+Interviews&
+//        aspectFilter(1).aspectName=Condition&
+//        aspectFilter(1).aspectValueName(0)=Brand+New&
+//        aspectFilter(1).aspectValueName(1)=Like+New
+
+//        itemFilter(0).name=Condition&
+//        itemFilter(0).value=Used&
+        
+        
+        
+        
+        // http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.12.0&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=2&categoryId=63863&outputSelector=AspectHistogram
+        
+        
+        
+        
+//         let securePath = "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=KatieBar-ktebay-PRD-f2f8dabd4-01019dd9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=176984&aspectFilter(0).aspectName=Genre&aspectFilter(0).aspectValueName=Spoken+Word+%26+Interviews&aspectFilter(1).aspectName=Condition&aspectFilter(1).aspectValueName(0)=Brand+New&"
+        
+        /*
+        let securePath = "http://svcs.ebay.com/services/search/FindingService/v1?" +
+            "OPERATION-NAME=findItemsByCategory&" +
+            "SERVICE-VERSION=1.0.0&" +
+            "SECURITY-APPNAME=YourAppID&" +
+            "RESPONSE-DATA-FORMAT=XML&" +
+            "REST-PAYLOAD&" +
+            "categoryId=307&" +
+            "paginationInput.entriesPerPage=3&" +
+            "paginationInput.pageNumber=11&" +
+            "aspectFilter(0).aspectName=Genre&" +
+            "aspectFilter(0).aspectValueName=Spoken+Word+%26+Interviews&" +
+            "aspectFilter(1).aspectName=Condition&" +
+            "aspectFilter(1).aspectValueName(0)=Brand+New&" +
+            "aspectFilter(1).aspectValueName(1)=Like+New" */
+
         let securePath = searchString!
         print(securePath)
         Alamofire.request(.GET, securePath)
