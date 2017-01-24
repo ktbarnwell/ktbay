@@ -71,8 +71,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="591" height="66"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-KS-kJD">
-                                            <rect key="frame" x="274" y="22" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-KS-kJD">
+                                            <rect key="frame" x="295" y="32.5" width="0.0" height="0.0"/>
                                             <animations/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
@@ -90,40 +90,58 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTableViewCell" textLabel="CvE-QM-Ayi" detailTextLabel="xB5-kV-g49" style="IBUITableViewCellStyleValue1" id="mSK-Rk-GG7" customClass="CustomTableViewCell" customModule="simple_ebay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EbayTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="EbayTableViewCell" id="mSK-Rk-GG7" customClass="EbayTableViewCell" customModule="simple_ebay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="591" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
                                             <rect key="frame" x="0.0" y="0.0" width="591" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="UIImageView" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-H0-EvV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="591" height="50"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="UIImageView" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="140" id="rSf-Co-ANH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-1K-CUc">
+                                                            <rect key="frame" x="203" y="0.0" width="388" height="50"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <animations/>
-                                                </imageView>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CvE-QM-Ayi">
-                                                    <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xB5-kV-g49">
-                                                    <rect key="frame" x="534.5" y="12" width="41.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <constraints>
+                                                        <constraint firstItem="Qmq-1p-3fa" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vh9-H0-EvV" secondAttribute="leading" constant="20" id="UsQ-LL-esA"/>
+                                                        <constraint firstItem="oBE-1K-CUc" firstAttribute="leading" secondItem="Qmq-1p-3fa" secondAttribute="trailing" constant="20" id="fyt-fO-4Ah"/>
+                                                        <constraint firstAttribute="trailing" secondItem="oBE-1K-CUc" secondAttribute="trailing" constant="20" id="huj-Nw-ccV"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="fyt-fO-4Ah"/>
+                                                            <exclude reference="huj-Nw-ccV"/>
+                                                        </mask>
+                                                    </variation>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="vh9-H0-EvV" firstAttribute="leading" secondItem="JTY-T3-tEU" secondAttribute="leading" id="6M3-dX-4PH"/>
+                                                <constraint firstAttribute="trailing" secondItem="vh9-H0-EvV" secondAttribute="trailing" id="9JQ-wD-B9V"/>
+                                                <constraint firstItem="vh9-H0-EvV" firstAttribute="centerY" secondItem="JTY-T3-tEU" secondAttribute="centerY" id="JbQ-Lo-I3s"/>
+                                                <constraint firstItem="vh9-H0-EvV" firstAttribute="top" secondItem="JTY-T3-tEU" secondAttribute="top" id="z5r-wT-r57"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <accessibility key="accessibilityConfiguration" identifier="EbayTableViewCell"/>
                                         <connections>
-                                            <outlet property="myImageView" destination="Qmq-1p-3fa" id="f0E-PS-vop"/>
-                                            <outlet property="myTitle" destination="CvE-QM-Ayi" id="Oxi-Od-phS"/>
+                                            <outlet property="myImageView" destination="Qmq-1p-3fa" id="386-No-dhP"/>
+                                            <outlet property="myTitle" destination="oBE-1K-CUc" id="7TX-Ot-9Mr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0239DC791E1EF11500CA318F /* MySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239DC781E1EF11500CA318F /* MySearchController.swift */; };
+		024721531E37F69A00965902 /* EbayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024721521E37F69A00965902 /* EbayTableViewCell.swift */; };
 		2BEF0DD5AFF628B5E9501B99 /* Pods_simple_ebay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712CD096D1F6CFE4B9E54537 /* Pods_simple_ebay.framework */; };
 		68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3C1DD29F67008D5F9D /* AppDelegate.swift */; };
 		68114D3F1DD29F67008D5F9D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114D3E1DD29F67008D5F9D /* ResultsViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0239DC781E1EF11500CA318F /* MySearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySearchController.swift; sourceTree = "<group>"; };
+		024721521E37F69A00965902 /* EbayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EbayTableViewCell.swift; sourceTree = "<group>"; };
 		08E0BEC4E65ABD7926978BF6 /* Pods-simple_ebay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple_ebay.release.xcconfig"; path = "Pods/Target Support Files/Pods-simple_ebay/Pods-simple_ebay.release.xcconfig"; sourceTree = "<group>"; };
 		68114D391DD29F67008D5F9D /* simple_ebay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_ebay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68114D3C1DD29F67008D5F9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				682982CA1E1B1AA1008A3C46 /* EbayItem.swift */,
 				68114D3E1DD29F67008D5F9D /* ResultsViewController.swift */,
 				68769C201E2DD80B00E2BEB0 /* CustomTableViewCell.swift */,
+				024721521E37F69A00965902 /* EbayTableViewCell.swift */,
 				0239DC781E1EF11500CA318F /* MySearchController.swift */,
 				68114D401DD29F67008D5F9D /* Main.storyboard */,
 				68114D431DD29F67008D5F9D /* Assets.xcassets */,
@@ -236,6 +239,7 @@
 			files = (
 				68114D3F1DD29F67008D5F9D /* ResultsViewController.swift in Sources */,
 				68769C211E2DD80B00E2BEB0 /* CustomTableViewCell.swift in Sources */,
+				024721531E37F69A00965902 /* EbayTableViewCell.swift in Sources */,
 				68114D3D1DD29F67008D5F9D /* AppDelegate.swift in Sources */,
 				682982CB1E1B1AA1008A3C46 /* EbayItem.swift in Sources */,
 				0239DC791E1EF11500CA318F /* MySearchController.swift in Sources */,
