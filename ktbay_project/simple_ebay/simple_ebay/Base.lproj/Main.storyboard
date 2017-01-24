@@ -90,7 +90,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTableViewCell" textLabel="CvE-QM-Ayi" detailTextLabel="xB5-kV-g49" style="IBUITableViewCellStyleValue1" id="mSK-Rk-GG7" customClass="CustomTableViewCell" customModule="simple_ebay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CustomEbayCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomEbayCell" textLabel="CvE-QM-Ayi" detailTextLabel="xB5-kV-g49" style="IBUITableViewCellStyleValue1" id="mSK-Rk-GG7" customClass="CustomEbayCell" customModule="simple_ebay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="591" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
@@ -122,8 +122,8 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="myImageView" destination="Qmq-1p-3fa" id="f0E-PS-vop"/>
-                                            <outlet property="myTitle" destination="CvE-QM-Ayi" id="Oxi-Od-phS"/>
+                                            <outlet property="myImageView" destination="Qmq-1p-3fa" id="Rf6-VF-00f"/>
+                                            <outlet property="myTitle" destination="CvE-QM-Ayi" id="toa-8O-rJw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

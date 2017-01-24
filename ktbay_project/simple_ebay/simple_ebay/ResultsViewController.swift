@@ -18,7 +18,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var headLabel: UILabel!
     
-    let cellIdentifier = "CustomTableViewCell"
+    // change this to customebaycell
+    
+    let cellIdentifier = "CustomEbayCell"
     var items:Array<EbayItem>?
     var searchTerm:SearchTerm?
     // rename later
@@ -136,7 +138,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let cell:CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
+        let cell:CustomEbayCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomEbayCell
 
         if self.items != nil {
             let item = self.items![indexPath.row]
