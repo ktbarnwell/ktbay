@@ -45,13 +45,11 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.getImagesDummy()
+       
         self.tableView?.rowHeight = 140
-        // Do any additional setup after loading the view, typically from a nib.
         self.tableView?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
         self.loadItems()
-        // getImagesDummy going HERE produces two dummy images in the cells.
-        self.getImagesDummy()
+        //self.getImagesDummy()
         dispatch_async(dispatch_get_main_queue()) {
             if let myLabel = self.labelText {
                 self.headLabel.text = myLabel

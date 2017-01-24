@@ -97,18 +97,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="591" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-H0-EvV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="591" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-H0-EvV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="591" height="44"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="UIImageView" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
+                                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIImageView" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="93" height="44"/>
                                                             <animations/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="140" id="rSf-Co-ANH"/>
-                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-1K-CUc">
-                                                            <rect key="frame" x="203" y="0.0" width="388" height="50"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-1K-CUc">
+                                                            <rect key="frame" x="93" y="12" width="499" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -121,12 +118,6 @@
                                                         <constraint firstItem="oBE-1K-CUc" firstAttribute="leading" secondItem="Qmq-1p-3fa" secondAttribute="trailing" constant="20" id="fyt-fO-4Ah"/>
                                                         <constraint firstAttribute="trailing" secondItem="oBE-1K-CUc" secondAttribute="trailing" constant="20" id="huj-Nw-ccV"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="fyt-fO-4Ah"/>
-                                                            <exclude reference="huj-Nw-ccV"/>
-                                                        </mask>
-                                                    </variation>
                                                 </stackView>
                                             </subviews>
                                             <animations/>
