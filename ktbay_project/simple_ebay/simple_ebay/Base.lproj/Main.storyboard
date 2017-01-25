@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v7O-FU-2HN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v7O-FU-2HN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -93,37 +93,47 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EbayTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="EbayTableViewCell" id="mSK-Rk-GG7" customClass="EbayTableViewCell" customModule="simple_ebay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="591" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" tableViewCell="mSK-Rk-GG7" id="JTY-T3-tEU">
                                             <rect key="frame" x="0.0" y="0.0" width="591" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-H0-EvV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="591" height="44"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" distribution="fillProportionally" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-H0-EvV">
+                                                    <rect key="frame" x="8" y="0.0" width="575" height="44"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="UIImageView" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="93" height="44"/>
+                                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="UIImageView" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmq-1p-3fa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
                                                             <animations/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-1K-CUc">
-                                                            <rect key="frame" x="93" y="12" width="499" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-1K-CUc">
+                                                            <rect key="frame" x="60" y="13" width="445" height="20"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjH-f5-8xZ">
+                                                            <rect key="frame" x="525" y="14" width="50" height="17"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="Bft-K6-rMy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstItem="Qmq-1p-3fa" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vh9-H0-EvV" secondAttribute="leading" constant="20" id="UsQ-LL-esA"/>
+                                                        <constraint firstItem="KjH-f5-8xZ" firstAttribute="leading" secondItem="oBE-1K-CUc" secondAttribute="trailing" constant="20" id="KoV-P8-LrD"/>
+                                                        <constraint firstItem="Qmq-1p-3fa" firstAttribute="leading" secondItem="vh9-H0-EvV" secondAttribute="leading" constant="8" id="UsQ-LL-esA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KjH-f5-8xZ" secondAttribute="trailing" constant="20" id="ZrZ-cI-1lk"/>
                                                         <constraint firstItem="oBE-1K-CUc" firstAttribute="leading" secondItem="Qmq-1p-3fa" secondAttribute="trailing" constant="20" id="fyt-fO-4Ah"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oBE-1K-CUc" secondAttribute="trailing" constant="20" id="huj-Nw-ccV"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="vh9-H0-EvV" firstAttribute="leading" secondItem="JTY-T3-tEU" secondAttribute="leading" id="6M3-dX-4PH"/>
-                                                <constraint firstAttribute="trailing" secondItem="vh9-H0-EvV" secondAttribute="trailing" id="9JQ-wD-B9V"/>
+                                                <constraint firstItem="vh9-H0-EvV" firstAttribute="leading" secondItem="JTY-T3-tEU" secondAttribute="leading" constant="8" id="6M3-dX-4PH"/>
+                                                <constraint firstAttribute="trailing" secondItem="vh9-H0-EvV" secondAttribute="trailing" constant="8" id="9JQ-wD-B9V"/>
                                                 <constraint firstItem="vh9-H0-EvV" firstAttribute="centerY" secondItem="JTY-T3-tEU" secondAttribute="centerY" id="JbQ-Lo-I3s"/>
                                                 <constraint firstItem="vh9-H0-EvV" firstAttribute="top" secondItem="JTY-T3-tEU" secondAttribute="top" id="z5r-wT-r57"/>
                                             </constraints>
@@ -133,6 +143,7 @@
                                         <connections>
                                             <outlet property="myImageView" destination="Qmq-1p-3fa" id="386-No-dhP"/>
                                             <outlet property="myTitle" destination="oBE-1K-CUc" id="7TX-Ot-9Mr"/>
+                                            <outlet property="priceLabel" destination="KjH-f5-8xZ" id="b0N-cU-tsw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
