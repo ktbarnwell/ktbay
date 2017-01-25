@@ -111,7 +111,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjH-f5-8xZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjH-f5-8xZ">
                                                             <rect key="frame" x="525" y="14" width="50" height="17"/>
                                                             <animations/>
                                                             <constraints>
@@ -128,6 +128,12 @@
                                                         <constraint firstAttribute="trailing" secondItem="KjH-f5-8xZ" secondAttribute="trailing" constant="20" id="ZrZ-cI-1lk"/>
                                                         <constraint firstItem="oBE-1K-CUc" firstAttribute="leading" secondItem="Qmq-1p-3fa" secondAttribute="trailing" constant="20" id="fyt-fO-4Ah"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="UsQ-LL-esA"/>
+                                                            <exclude reference="ZrZ-cI-1lk"/>
+                                                        </mask>
+                                                    </variation>
                                                 </stackView>
                                             </subviews>
                                             <animations/>

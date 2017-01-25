@@ -35,7 +35,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView?.rowHeight = 140
+        self.tableView?.rowHeight = 120
         self.tableView?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
         self.loadItems()
         dispatch_async(dispatch_get_main_queue()) {
